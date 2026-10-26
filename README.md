@@ -66,6 +66,11 @@ Lakshmangarh, Rajasthan
     <td>Multiple Graph</td>
     <td><a href="#program-4-multiple-graph">Program 4</a></td>
   </tr>
+   <tr>
+    <td>5</td>
+    <td>Illustrate Undirected Graph</td>
+    <td><a href="#program-5-illustrate-undirected-graph">Program 5</a></td>
+  </tr>
   
 </table>
 
@@ -289,4 +294,69 @@ g3.print_graph()
 [Back to Index](#index)
 
 ---
+<div style="page-break-after: always;"></div>
 
+# Program 5: Illustrate Undirected Graph
+
+## Aim
+
+To write a Python program to illustrate undirected graph.
+## Program
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2):
+        # Undirected edge: connection in both directions
+        node1.neighbors.append(node2)
+        node2.neighbors.append(node1)
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor in node.neighbors:
+                print(neighbor.data, end=" ")
+            print()
+
+
+# Create an undirected graph
+g = Graph()
+
+# Add vertices
+a = g.add_node("A")
+b = g.add_node("B")
+c = g.add_node("C")
+d = g.add_node("D")
+
+# Add undirected edges
+g.add_edge(a, b)
+g.add_edge(a, c)
+g.add_edge(b, d)
+g.add_edge(c, d)
+
+# Display the graph
+print("Undirected Graph:")
+g.print_graph()
+```
+
+## Sample Output
+
+<img width="218" height="196" alt="image" src="https://github.com/user-attachments/assets/5ddec05b-38b3-411b-97e4-1f96bfdab2b1" />
+
+
+[Back to Index](#index)
+
+---
