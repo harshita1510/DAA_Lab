@@ -81,6 +81,11 @@ Lakshmangarh, Rajasthan
     <td>Illustrate Undirected Weighted Graph</td>
     <td><a href="#program-7-illustrate-undirected-weighted-graph">Program 7</a></td>
   </tr>
+  <tr>
+    <td>8</td>
+    <td>Illustrate Directed Weighted Graph</td>
+    <td><a href="#program-8-illustrate-directed-weighted-graph">Program 8</a></td>
+  </tr>
   
 </table>
 
@@ -496,6 +501,71 @@ g.print_graph()
 ## Sample Output
 
 <img width="332" height="207" alt="image" src="https://github.com/user-attachments/assets/7a719581-81a7-49dc-afdb-db02993b7d48" />
+
+
+[Back to Index](#index)
+
+---
+<div style="page-break-after: always;"></div>
+
+# Program 8: Illustrate Directed Weighted Graph
+
+## Aim
+
+To write a Python program to illustrate directed weighted graph.
+## Program
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2, weight):
+        # Directed weighted edge
+        node1.neighbors.append((node2, weight))
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor, weight in node.neighbors:
+                print(f"({neighbor.data}, weight={weight})", end=" ")
+            print()
+
+
+# Create a directed weighted graph
+g = Graph()
+
+# Add vertices
+a = g.add_node("A")
+b = g.add_node("B")
+c = g.add_node("C")
+d = g.add_node("D")
+
+# Add directed edges with weights
+g.add_edge(a, b, 10)
+g.add_edge(a, c, 20)
+g.add_edge(b, d, 30)
+g.add_edge(c, d, 40)
+
+# Display the graph
+print("Directed Weighted Graph:")
+g.print_graph()
+```
+
+## Sample Output
+
+<img width="327" height="186" alt="image" src="https://github.com/user-attachments/assets/699d936e-8b94-4572-97c6-2bb519d0d508" />
 
 
 [Back to Index](#index)
