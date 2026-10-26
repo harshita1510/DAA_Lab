@@ -36,7 +36,6 @@ Lakshmangarh, Rajasthan
 
 <div style="page-break-after: always;"></div>
 
-# INDEX
 
 # INDEX
 
@@ -50,7 +49,7 @@ Lakshmangarh, Rajasthan
   <tr>
     <td>1</td>
     <td>Finding Execution Time</td>
-    <td><a href="#program-1-addition-of-two-numbers">Program 1</a></td>
+    <td><a href="#program-1-finding-execution-time">Program 1</a></td>
   </tr>
 
   
@@ -61,30 +60,31 @@ Lakshmangarh, Rajasthan
 
 <div style="page-break-after: always;"></div>
 
-# Program 1: Addition of Two Numbers
+# Program 1: Finding Execution Time
 
 ## Aim
 
-To write a Python program to find the sum of two numbers.
-
+To write a Python program to find the time of execution.
 ## Program
 
 ```python
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
+import time
 
-sum = a + b
+start = time.time()
 
-print("Sum =", sum)
+# Program
+for i in range(1000000):
+    pass
+
+end = time.time()
+
+print("Execution Time:", end - start, "seconds")
 ```
 
 ## Sample Output
 
-```text
-Enter first number: 10
-Enter second number: 20
-Sum = 30
-```
+<img width="442" height="173" alt="image" src="https://github.com/user-attachments/assets/7b2ba5f4-c0cc-44b2-9d1b-fe6f34b55b50" />
+
 
 [Back to Index](#index)
 
