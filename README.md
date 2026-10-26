@@ -56,7 +56,11 @@ Lakshmangarh, Rajasthan
     <td>Finding Memory Used</td>
     <td><a href="#program-2-finding-memory-used">Program 2</a></td>
   </tr>
-
+  <tr>
+    <td>3</td>
+    <td>Creating Graph</td>
+    <td><a href="#program-3-creating-graph">Program 3</a></td>
+  </tr>
   
 </table>
 
@@ -122,6 +126,71 @@ tracemalloc.stop()
 ## Sample Output
 
 <img width="325" height="166" alt="image" src="https://github.com/user-attachments/assets/dce33956-e66c-461c-833d-67c2ac1ba4b7" />
+
+
+[Back to Index](#index)
+
+---
+<div style="page-break-after: always;"></div>
+
+# Program 3: Creating Graph
+## Aim
+
+To write a Python program to create a graph.
+## Program
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2):
+        node1.neighbors.append(node2)
+        node2.neighbors.append(node1)
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+
+            for neighbor in node.neighbors:
+                print(neighbor.data, end=" ")
+
+            print()
+
+
+# Create graph
+g = Graph()
+
+# Add nodes
+n1 = g.add_node(1)
+n2 = g.add_node(2)
+n3 = g.add_node(3)
+n4 = g.add_node(4)
+
+# Add edges
+g.add_edge(n1, n2)
+g.add_edge(n1, n3)
+g.add_edge(n2, n4)
+g.add_edge(n3, n4)
+
+# Display graph
+g.print_graph()
+```
+
+## Sample Output
+
+<img width="213" height="170" alt="image" src="https://github.com/user-attachments/assets/84144f74-0662-4d56-a3dc-b0310f852066" />
 
 
 [Back to Index](#index)
