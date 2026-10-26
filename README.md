@@ -51,6 +51,11 @@ Lakshmangarh, Rajasthan
     <td>Finding Execution Time</td>
     <td><a href="#program-1-finding-execution-time">Program 1</a></td>
   </tr>
+  <tr>
+    <td>2</td>
+    <td>Finding Memory Used</td>
+    <td><a href="#program-2-finding-memory-used">Program 2</a></td>
+  </tr>
 
   
 </table>
@@ -84,6 +89,39 @@ print("Execution Time:", end - start, "seconds")
 ## Sample Output
 
 <img width="442" height="173" alt="image" src="https://github.com/user-attachments/assets/7b2ba5f4-c0cc-44b2-9d1b-fe6f34b55b50" />
+
+
+[Back to Index](#index)
+
+---
+<div style="page-break-after: always;"></div>
+
+# Program 2: Finding Memory Used
+
+## Aim
+
+To write a Python program to find the memory used.
+## Program
+
+```python
+import tracemalloc
+
+tracemalloc.start()
+
+# Program
+a = [i for i in range(100000)]
+
+current, peak = tracemalloc.get_traced_memory()
+
+print("Current Memory:", current, "bytes")
+print("Peak Memory:", peak, "bytes")
+
+tracemalloc.stop()
+```
+
+## Sample Output
+
+<img width="325" height="166" alt="image" src="https://github.com/user-attachments/assets/dce33956-e66c-461c-833d-67c2ac1ba4b7" />
 
 
 [Back to Index](#index)
