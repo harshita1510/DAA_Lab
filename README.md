@@ -61,6 +61,11 @@ Lakshmangarh, Rajasthan
     <td>Creating Graph</td>
     <td><a href="#program-3-creating-graph">Program 3</a></td>
   </tr>
+  <tr>
+    <td>4</td>
+    <td>Multiple Graph</td>
+    <td><a href="#program-4-multiple-graph">Program 4</a></td>
+  </tr>
   
 </table>
 
@@ -196,5 +201,92 @@ g.print_graph()
 [Back to Index](#index)
 
 ---
+<div style="page-break-after: always;"></div>
 
+# Program 4: Multiple Graph
+
+## Aim
+
+To write a Python program to create multiple graph.
+## Program
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2):
+        node1.neighbors.append(node2)
+        node2.neighbors.append(node1)
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor in node.neighbors:
+                print(neighbor.data, end=" ")
+            print()
+
+
+# First Graph
+g1 = Graph()
+
+n1 = g1.add_node(1)
+n2 = g1.add_node(2)
+n3 = g1.add_node(3)
+
+g1.add_edge(n1, n2)
+g1.add_edge(n2, n3)
+
+# Second Graph
+g2 = Graph()
+
+n4 = g2.add_node(4)
+n5 = g2.add_node(5)
+n6 = g2.add_node(6)
+
+g2.add_edge(n4, n5)
+g2.add_edge(n4, n6)
+
+# Third Graph
+g3 = Graph()
+
+n7 = g3.add_node(7)
+n8 = g3.add_node(8)
+n9 = g3.add_node(9)
+
+g3.add_edge(n7, n8)
+g3.add_edge(n8, n9)
+g3.add_edge(n7, n9)
+
+
+# Print all graphs
+print("First Graph:")
+g1.print_graph()
+
+print("\nSecond Graph:")
+g2.print_graph()
+
+print("\nThird Graph:")
+g3.print_graph()
+```
+
+## Sample Output
+
+<img width="364" height="385" alt="image" src="https://github.com/user-attachments/assets/561ff081-88de-43bb-808e-61f77ca1d619" />
+
+
+[Back to Index](#index)
+
+---
 
